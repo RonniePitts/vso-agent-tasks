@@ -68,9 +68,6 @@ $azureWebSiteError = $null
 #If we're provided a WebSiteLocation, check for it and create it if necessary
 if($WebSiteLocation)
 {
-    if (!$Slot -and $WebSiteName -notlike '*(*)*') {
-        $Slot = 'production'
-    }
 
     $extraParameters = @{ }
     if ($Slot) { $extraParameters['Slot'] = $Slot }   
